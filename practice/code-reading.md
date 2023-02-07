@@ -16,6 +16,8 @@ Take a look at the following code:
 
 Explain why line 4 and line 6 output different numbers.
 
+The variable x in the function, has function scope so when we log it inside the function its output is 2. However, the last console.log outside the function, will refer to the global-scoped variable x so its output is 1.
+
 ## Question 2
 
 Take a look at the following code:
@@ -34,6 +36,10 @@ console.log(y)
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+
+10
+undefined
+Here the variable x has a global scope, so it can be accessible from outside the function. However, the variable y is declared within the function and has function scope, so we can't log it from outside the function.
 
 ## Question 3
 
@@ -62,3 +68,7 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+
+9
+{ x: 10 }
+When we log the variable x the output is still 9 because x has global scope not function scope and it wouldn't be incremented. However, the last console.log will change the value of the object because we are passing an argument as reference(since it is object), so it can be modified by function.
