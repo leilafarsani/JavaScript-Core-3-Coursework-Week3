@@ -70,3 +70,34 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+const peopleOfTheGryffindorFinder = (arr) => {
+  let peopleOfTheGryffindor = arr.filter(
+    (people) => people.house === "Gryffindor"
+  );
+  peopleOfTheGryffindor.forEach((people) => {
+    const { firstName, lastName } = people;
+    console.log(`${firstName} ${lastName}`);
+  });
+};
+peopleOfTheGryffindorFinder(hogwarts);
+
+const teacherWithPetsFinder = (arr) => {
+  let teacherWithPets = arr.filter(
+    (people) => people.occupation === "Teacher" && people.pet !== null
+  );
+  teacherWithPets.forEach((people) => {
+    const { firstName, lastName } = people;
+    console.log(`${firstName} ${lastName}`);
+  });
+};
+
+/*OR
+const teacherWithPetsFinder = (arr) => {
+  let teacherWithPets = arr.filter((people) => people.occupation === "Teacher");
+  teacherWithPets.forEach((people) => {
+    const { firstName, lastName, pet } = people;
+    if (pet) console.log(`${firstName} ${lastName}`);
+  });
+};*/
+teacherWithPetsFinder(hogwarts);
